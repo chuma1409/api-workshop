@@ -1,29 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+
+    <script type="text/x-script" class="carsTemplateText">
+        <table>
+            <tr>
+                <th>BRAND</th>
+                <th>MAKE</th>
+                <th>Registration Number</th>
+                <th>price</th>
+            </tr>
+            {{#each cars}}
+
+
+            <tr>
+                <td>
+                    <li>{{this.model}}</li>
+                </td>
+                <td>
+                    <li>{{this.make}}</li>
+                </td>
+                <td>
+                    <li>{{this.reg_number}}</li>
+                </td>
+                <td>
+                    <li>{{this.price}}</li>
+                </td>
+            </tr>
+
+
+            {{/each}}
+        </table>
+
+
+    </script>
+    <script type="text/x-script" class="brandsTemplateText">
+
+        {{#each brands}}
+
+        <li>{{this}}</li>
+
+        {{/each}}
+
+    </script>
+
+    <script type="text/x-script" class="colorsTemplateText">
+
+        {{#each colors}}
+
+        <li>{{this}}</li>
+
+        {{/each}}
+
+    </script>
+
 </head>
+
 <body>
 
-	<h1>Car info</h1>
 
-	<h2>Colors</h2>
-	<div class="colors" >
+    <h1>Car info</h1>
 
-	</div>
+    <h2>Colors</h2>
+    <div class="colors">
+        <ul class="colorsList">
 
-	<h2>Brands</h2>
-	<div class="brands">
+        </ul>
 
-	</div>
+    </div>
 
-	<h2>Cars</h2>
-	<div class="cars">
+    <h2>Brands</h2>
+    <div class="brands">
+        <ul class="brandsList">
 
-	</div>
+        </ul>
+
+    </div>
+
+    <h2>Cars</h2>
+    <div class="cars">
+        <div class="carsList">
+
+
+        </div>
+
+    </div>
 </body>
+<script src="cars.js"></script>
+
+
 </html>
